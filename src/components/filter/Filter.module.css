@@ -1,0 +1,10 @@
+.filterHeader {
+  font-size: 20px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.filterInput {
+  margin-left: 0;
+  display: block;
+}

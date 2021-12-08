@@ -1,0 +1,25 @@
+.btnDel {
+  margin-left: 20px;
+  height: 25px;
+  text-align: center;
+  margin-top: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btnDel:hover {
+  outline: none;
+  background-color: cornflowerblue;
+}
+
+.listItem {
+  padding-bottom: 10px;
+  height: 28px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 19px;
+}
+
+.list {
+  margin-bottom: 150px;
+}
