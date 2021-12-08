@@ -5,9 +5,15 @@ import styles from "./Form.module.css";
 
 class Form extends Component {
   state = {
-    contacts: this.props.contacts,
+    contacts: [
+    {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+  ],
     name: this.props.name,
-    number: "",
+      number: '',
+    filter: '',
   };
 
     nameInputId = nanoid();
@@ -18,7 +24,6 @@ class Form extends Component {
     this.setState((state) => ({
       ...state,
       name: e.target.value,
-      number: e.target.value,
     }));
     };
     
@@ -40,7 +45,14 @@ class Form extends Component {
       formData.reset();
   };
  
-
+  filterName = (e) => {
+    e.preventDefault();
+    this.setState((state) => ({
+      ...state,
+      filter: e.target.value,
+    }))
+    }
+    
   render() {
     return (
       <div>
@@ -79,13 +91,19 @@ class Form extends Component {
               </button>
             </fieldset>
           </form>
-          <h2 className={styles.contactsHeader}>Contacts</h2>
+                <h2 className={styles.contactsHeader}>Contacts</h2>
+                <h3>Find contacts by name</h3>
+                <input type="text" name="filter" onChange={this.filterName} pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$" title="Name input"/>
           <ul className={styles.contactsList}>
-            {this.state.contacts.map(({ id, name, number }) => (
-              <li className={styles.contactsItem} key={id}>
-                {name}: {number}
-              </li>
-            ))}
+                    {this.state.filter === ""
+                        ? this.state.contacts.map(({ id, name, number }) => (
+                            <li key={id}>{name}: {number}</li>
+                        ))
+                        : this.state.contacts.filter(({ name }) => name.toLowerCase().includes((this.state.filter).toLowerCase())).map(({ id, name, number }) => (
+                            <li key={id}>{name}: {number}</li>
+                        ))
+                    }
+   
           </ul>
         </div>
       </div>
