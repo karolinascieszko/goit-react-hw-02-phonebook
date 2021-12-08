@@ -1,0 +1,51 @@
+.phonebookHeader {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.formField {
+  width: 350px;
+  min-height: 200px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.formInput {
+  width: 150px;
+  margin-bottom: 20px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.formInput:focus {
+  border-color: blue;
+}
+
+.formButton {
+  width: 90px;
+  background-color: #fff;
+  border-radius: 5px;
+  border-color: gray;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.contactsHeader {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+.contactsItem {
+  margin-left: 20px;
+  text-align: left;
+  font-size: 20px;
+}
